@@ -53,18 +53,23 @@ const HomeScreen = () => {
       >
         {/* button for the hotel rating*/}
         <TouchableOpacity style={styles.starButton}>
-          <Icon name="star-outline" size={30} color="white" />
+          <Icon name="star-outline" size={20} color="white"  style={styles.starIcon}/>
           <Text style={styles.ratingText}>{item.rating}</Text>
         </TouchableOpacity>
 
-        {/* Hotel name */}
-        <Text style={styles.hotelName}>{item.name}</Text>
+        {/* Hotel information container */}
+        <View style={styles.infoContainer}>
+          {/* Hotel name */}
+          <Text style={styles.hotelName}>{item.name}</Text>
 
-        {/* Location*/}
-        <Text style={styles.locationText}>{item.location}</Text>
+          {/* Location */}
+          <Text style={styles.locationText}>{item.location}</Text>
+        
 
-        {/* Price*/}
+        {/* Price */}
         <Text style={styles.priceText}>{item.price}</Text>
+
+        </View>
       </ImageBackground>
 
       {/* Save bookmark icon */}
@@ -152,7 +157,7 @@ const HomeScreen = () => {
         </View>
       </ScrollView>
 
-      {/* Bottom Navigation(icons), using tenary operators for the logic of pressing a button/icon */}
+      {/* Bottom Navigation(icons), using ternary operators for the logic of pressing a button/icon */}
       <View style={styles.bottomNav}>
         <TouchableOpacity
           style={[
@@ -289,19 +294,20 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
     margin: 10,
-    marginTop:8,
+    marginTop:10,
   },
   locationText: {
     fontSize: 16,
     color: '#ccc',
-    marginTop: 15,
+    marginTop: 30,
     marginLeft: 10,
   },
   priceText: {
     fontSize: 20,
     fontWeight: 'bold',
     color: 'white',
-    marginTop: 20,
+    marginTop: 30,
+    bottom:15,
     marginLeft: 10,
   },
   bottomNav: {
@@ -403,11 +409,11 @@ const styles = StyleSheet.create({
     width: 40, 
     height: 50,
     marginLeft: -10, 
-    
-    
+  },
+  starIcon: {
+    paddingRight: 7,
 
   },
 });
-
 
 export default HomeScreen;
